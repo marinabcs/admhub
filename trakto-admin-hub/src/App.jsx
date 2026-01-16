@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import MainLayout from './components/layout/MainLayout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import DocumentosPage from './pages/compliance/DocumentosPage';
 
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth();
@@ -52,7 +53,7 @@ function AppRoutes() {
         }
       >
         <Route index element={<Dashboard />} />
-        <Route path="documentos" element={<div className="text-gray-500">Página de Documentos - Em desenvolvimento</div>} />
+        <Route path="documentos" element={<DocumentosPage />} />
         <Route path="checklist" element={<div className="text-gray-500">Página de Checklist - Em desenvolvimento</div>} />
         <Route path="socios" element={<div className="text-gray-500">Página de Sócios - Em desenvolvimento</div>} />
         <Route path="relatorios" element={<div className="text-gray-500">Página de Relatórios - Em desenvolvimento</div>} />
