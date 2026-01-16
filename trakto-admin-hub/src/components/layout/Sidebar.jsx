@@ -11,18 +11,19 @@ const menuItems = [
 
 export default function Sidebar() {
   return (
-    <aside className="w-64 bg-gray-900 min-h-screen">
+    <aside className="w-64 bg-slate-900 border-r border-slate-700/50 min-h-screen">
       <nav className="p-4">
         <ul className="space-y-2">
           {menuItems.map((item) => (
             <li key={item.path}>
               <NavLink
                 to={item.path}
+                end={item.path === '/'}
                 className={({ isActive }) =>
-                  `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                  `flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                     isActive
-                      ? 'bg-indigo-600 text-white'
-                      : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                      ? 'bg-trakto-blue text-white shadow-glow'
+                      : 'text-slate-300 hover:bg-slate-800 hover:text-white'
                   }`
                 }
               >
